@@ -1,0 +1,86 @@
+{% extends "home/basic.html" %}
+
+{% block title %}
+WELCOME !!
+{% endblock title %}
+
+{% block css %}
+
+{% endblock css %}
+
+{% block body %}
+
+{% if messages %}
+<ul class="messages list-unstyled">
+    {% for message in messages %}
+    <li {% if message.tags %}>
+
+      <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+        <strong> {{ message }} </strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+{% endif %}
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<main role="main">
+
+
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron" style="text-align: center; ">
+    <br/>
+      <div class="container" >
+        <h1 class="display-3"  > WELCOME TO SUBMIT.com !!!
+
+          {% if user.is_authenticated  %}
+        Welcome {{request.user.first_name}}
+          {% endif %}
+</br>
+        </h1>
+        <p>SUBMIT.com is an online service for updation of student assignment submission information and posting of assignment marks. The system is password protected and can be accessed only through proper authentication. It can be accessed by Regional Centres and Study Centres.
+
+Before first time using the services, you are advised to change the password and the log-in by inputting user name and password for proper authentication and start access the services
+
+Any discripancies in entering the online data related to assignment awards are required to be sent with a proper justification by the concerned Regional Director to the Registrar SED for further action following due verification by the Regional Centre. This approach/mechanism is being adopted so as to avoid any litigation and malpractices. </p>
+        <p> In absence of any course in the software, the same may be brought to the notice of Assignment Section and write to <b> <a href="mailto:wasifhaju11@gmail.com">wasifhaju11@gmail.com </a></b>for inclusion of the same. </p>
+   
+
+      </div>
+    </div>
+</br>
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2 align="center"><b>ON-TIME SUBMSSION</b></h2>
+          <p>This Website let's you submit your project on time. The learners may ensure that while uploading digital copy of project through online mode, scanned pages are clear and not blurred, sequence is correct, pages are well lighted and not dim; orientation of pages is same - should not change between portrait and landscape. </p>
+          <p><a class="btn btn-info" href="https://webservices.ignou.ac.in/assignments/made/2016/es%20series/ES%20series%20assignments%202nd%20year%20january,%202016.pdf" role="button" style="border-radius: 50px; box-shadow: 5px 10px darkblue">CLICK HERE TO VIEW THE PROJECT !!</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2 align="center"><b>EASY ACCESS</b></h2>
+          <p>In order to further extend learner support services to its geographically distributed student population who are pursuing various Degree, Diploma and Masters Programme, the university has established the Campus Placement Cell (CPC). The mission and endeavor of CPC is to enhance and facilitate the process of prospective suitable employment opportunities  </p>
+          <a class="btn btn-info" href="https://webservices.ignou.ac.in/assignments/MAGD/2019-2020/Assignmnet%20MAGD%202019-20%20english.pdf" role="button" style="border-radius: 50px; box-shadow: 5px 10px darkblue" >CLICK HERE TO VIEW THE PROJECT !! </a></p>
+        </div>
+        <div class="col-md-4">
+          <h2 align="center"><b>EASY PROCESS</b></h2>
+          <p>A Simpler, cleaner and well organised calendar dashboard for Assignments with easy to reschedule by drag and drop functionality. Adding Assignment is just one click away. Simply select class, subject, deadline and just add the Assignment. students will immediately got notified about new Assignments. Teachers can also share web references for Assignments.</p>
+          <p><a class="btn btn-info" href="https://webservices.ignou.ac.in/assignments/soss/MA_library/2019-20/MLIS%20Asstt-2019.pdf" role="button" style="border-radius: 50px; box-shadow: 5px 10px darkblue">CLICK HERE TO VIEW SAMPLE !!</a></p>
+        </div>
+      </div>
+</br>
+      <hr>
+
+    </div> <!-- /container -->
+
+  </main>
+
+
+  <footer class="container" style="text-align: center">
+    <p><b>&copy; SUBMIT.com 2015-2020</b></p>
+  </footer>
+
+
+{% endblock body %}
